@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Restaurants{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <h1>All Cafes</h1>
+
+	  <table class="table table-dark table-striped table-hover">
+          {% for cafe in cafes %}
+          <tr>
+              <td><p>{{cafe[0]}}</p></td>
+              {% if cafe[1] == "Location" %}
+              <td><p>{{cafe[1]}}</p></td>
+              {% else %}
+              <td><a href="{{cafe[1]}}">Map Links</a></td>
+              {% endif %}
+              <td><p>{{cafe[2]}}</p></td>
+              <td><p>{{cafe[3]}}</p></td>
+              <td><p>{{cafe[4]}}</p></td>
+              <td><p>{{cafe[5]}}</p></td>
+              <td><p>{{cafe[6]}}</p></td>
+          {% endfor %}
+  	  </table>
+
+      <p><a href="/">Return to index page</a></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
